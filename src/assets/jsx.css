@@ -20,3 +20,30 @@ a {
     width: 150px;
     margin: auto;
 }
+.header {
+    cursor: pointer;
+}
+.header:hover {
+    color: #42b983;
+}
+
+.textInputWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.textArea {
+    color: #333;
+}
+.emptyInput {
+    border: 1px solid #eee;
+}
+
+input {
+    outline: none;
+}
+
+.textShow {
+    margin-left: 10px;
+}

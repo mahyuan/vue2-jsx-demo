@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <img alt="Vue logo" src="../assets/logo.png">
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -27,6 +28,14 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <div class="textInputWrap">
+      <input
+        v-model="textValue"
+        :class="{textArea: true, emptyInput: !textValue }"
+        @input="onTextAreaInput"
+      >
+      <span :class="{ textShow: true }"> X 3 = {{ result }}</span>
+    </div>
   </div>
 </template>
 
@@ -34,7 +43,34 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg:{
+      type: String,
+      default: 'hello xiaomi'
+    }
+  },
+  data() {
+    return {
+      random: '',
+      textValue: '',
+      result: ''
+    }
+  },
+  methods: {
+    onTextAreaInput(event) {
+      const value = event.target.value.trim()
+
+      if (!value) {
+        this.result = ''
+      } else {
+        if (isNaN(Number(value)) ) {
+          this.result = value.repeat(3)
+        } else {
+          this.result = Number(value) * 3
+        }
+      }
+
+      this.textValue = value
+    }
   }
 }
 </script>
