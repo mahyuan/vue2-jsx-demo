@@ -1,5 +1,7 @@
 import 'assets/jsx.css';
 import info from 'assets/data';
+import AnchoredHeading from '../components/AnchoredHeading'
+
 
 export default {
   props: {
@@ -36,6 +38,7 @@ export default {
         class: { 'logo': true },
         attrs: { alt: logo.alt, src: logo.src }
       })
+      // return h(AnchoredHeading, {props: {level: 2}}, 'h2')
     },
     getContentNode(h, content) {
       if (!Array.isArray(content)) {

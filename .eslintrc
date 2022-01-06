@@ -3,7 +3,6 @@
     "parserOptions": {
         "parser": "babel-eslint",
         "sourceType": "module"
-
     },
     "env": {
         "browser": true,
@@ -27,7 +26,7 @@
         "vue/multiline-html-element-content-newline": "off",
         "vue/name-property-casing": ["error", "PascalCase"],
 
-        "no-unused-vars": "warn",
+        "no-unused-vars": "off",
         "keyword-spacing": [
             "warn", {
                 "before": true,

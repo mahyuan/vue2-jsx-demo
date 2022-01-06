@@ -9,17 +9,17 @@ import HelloWorldWithCreateElement from 'views/HelloWorldWithCreateElement'
 
 
 const routes = [{
-    path: '/',
-    component: HelloWorld
+  path: '/',
+  component: HelloWorld
 }, {
-    path: '/h',
-    component: HelloWorldWithCreateElement,
+  path: '/h',
+  component: HelloWorldWithCreateElement,
 }, {
-    path: '/jsx',
-    component: HelloWorldWithJSX
+  path: '/jsx',
+  component: HelloWorldWithJSX
 }]
 
 export default new VueRouter({
-    mode: 'hash',
-    routes
+  mode: 'hash',
+  routes
 })

@@ -1,5 +1,6 @@
 import 'assets/jsx.css';
 import info from 'assets/data';
+import AnchoredHeading from '../components/AnchoredHeading'
 
 export default {
   props: {
@@ -22,6 +23,12 @@ export default {
 
     return (
       <div class="hello">
+        <AnchoredHeading level={1}>header1</AnchoredHeading>
+        <AnchoredHeading level={2}>header2</AnchoredHeading>
+        <AnchoredHeading level={3}>header3</AnchoredHeading>
+        <AnchoredHeading level={4}>header4</AnchoredHeading>
+        <AnchoredHeading level={5}>header5</AnchoredHeading>
+
         <img class="logo" src={logo.src} alt={logo.alt} />
         <h1
           class={{header: true}}
@@ -85,9 +92,18 @@ export default {
       return (
         <div class="textInputWrap">
           <input
+            v-model_trim:stop={this.textValue}
+            placeholder="input---"
+            v-on:input={this.onTextAreaInput} />
+          {/* <input
+            vModel={this.textValue}
+            placeholder="input---"
+            vOn:input={this.onTextAreaInput} />
+          <input
             value={this.textValue}
             class={{ textArea: true, emptyInput: !this.textValue }}
-            onInput={this.onTextAreaInput}></input>
+            onInput={this.onTextAreaInput}
+          ></input> */}
           <span class={{ textShow: true }}> X 3 = { this.result }</span>
         </div>
       )
